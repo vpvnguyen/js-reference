@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - If/Else and Arrays</title>
+</head>
+<body>
+    <script>
+        var age = prompt("How old are you?");
+
+        if (age >= 21) {
+            alert("You are old enough to drink!");
+        } else {
+            alert("You are not old enough to drink");
+        }
+        
+        var goodFood = ["steak", "fish", "chicken", "burger"];
+        var foodLike = prompt("What kind of food do you like?").toLowerCase();
+        
+        if (goodFood.indexOf(foodLike) !== -1) {
+            alert("You have good taste in food");
+        } else {
+            alert("You have bad taste in food");
+        }
+
+    </script>
+</body>
+</html>
