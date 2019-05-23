@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-        var age = prompt("How old are you?");
+        let age = prompt("How old are you?");
 
         if (age >= 21) {
             alert("You are old enough to drink!");
@@ -16,14 +16,25 @@
             alert("You are not old enough to drink");
         }
         
-        var goodFood = ["steak", "fish", "chicken", "burger"];
-        var foodLike = prompt("What kind of food do you like?").toLowerCase();
+        let goodFood = ["steak", "fish", "chicken", "burger", "pasta", "tacos", "cardboard"];
+        let foodLike = prompt("What kind of food do you like?").toLowerCase();
         
         if (goodFood.indexOf(foodLike) !== -1) {
             alert("You have good taste in food");
         } else {
-            alert("You have bad taste in food");
+            confirm("You have bad taste in food, would you like to add this to the good food list?");
+            goodFood.push(foodLike);
+            alert(`Great! I have added ${foodLike} to the list of good food!`);
         }
+
+        document.write(`Here is a list of good food: `);
+        document.write("<br>");
+        document.write(goodFood);
+
+
+
+
+
 
     </script>
 </body>
