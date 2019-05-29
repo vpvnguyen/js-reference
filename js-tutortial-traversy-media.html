@@ -8,17 +8,16 @@
 </head>
 <body>
     <script>
+        // SOURCE: https://www.youtube.com/watch?v=hdI2bqOjy3c
+        // current time: 34:30
 
-        // DATA types
-        // strings, numbers, boolean, null, undefined, symbol
-
+        // DATA types = strings, numbers, boolean, null, undefined, symbol
         const string = 'string';
         const numbers = 0;
         const boolean = true;
         const x = null; //will show as object but is null
         const y = undefined; 
         let z; // undefined
-
         console.log(`${string} | ${numbers} | ${boolean} | ${x} | ${y} | ${z}`);
         console.log(typeof boolean);
 
@@ -32,9 +31,7 @@
         fruits[3] = 'grapes'; // add grapes after pears
         fruits.push('mangos'); // add mangos after grapes
         fruits.unshift('strawberries'); // add strawberries to index 0
-
-        // ['strawberries', 'apples', 'oranges', 'pears', 'grapes', 'mangos']
-        console.log(fruits);
+        console.log(fruits); // ['strawberries', 'apples', 'oranges', 'pears', 'grapes', 'mangos']
 
         // object literals aka key value pairs
         const person = {
@@ -48,27 +45,17 @@
                 state: 'MA'
             }
         }
-
-        // Jon Doe
-        console.log(person.firstName, person.lastName);
-
-        // movies
-        console.log(person.hobbies[1]);
-
-        // boston
-        console.log(person.address.city);
+        console.log(person.firstName, person.lastName); // Jon Doe
+        console.log(person.hobbies[1]); // movies
+        console.log(person.address.city); // boston
 
         // destructuring (new to ES6)
         let {firstName, lastName, address: {city}} = person;
-
-        // boston
-        console.log(city);
+        console.log(city); // boston
 
         // adding property
         person.email = 'jon@gmail.com';
-
-        // show everything + new email
-        console.log(person);
+        console.log(person); // show everything + new email
 
     </script>
 </body>
