@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // DATA types
+        // strings, numbers, boolean, null, undefined, symbol
+
+        const string = 'string';
+        const numbers = 0;
+        const boolean = true;
+        const x = null; //will show as object but is null
+        const y = undefined; 
+        let z; // undefined
+
+        console.log(`${string} | ${numbers} | ${boolean} | ${x} | ${y} | ${z}`);
+        console.log(typeof boolean);
+
+        // String to array
+        const stringTwo = 'a,b,c,d,e';
+        const split = stringTwo.split(',');
+        console.log(split);        
+
+        // arrays - variables that hold multiple values
+        const fruits = ['apples', 'oranges', 'pears'];
+        fruits[3] = 'grapes'; // add grapes after pears
+        fruits.push('mangos'); // add mangos after grapes
+        fruits.unshift('strawberries'); // add strawberries to index 0
+
+        // ['strawberries', 'apples', 'oranges', 'pears', 'grapes', 'mangos']
+        console.log(fruits);
+
+        // object literals aka key value pairs
+        const person = {
+            firstName: 'Jon',
+            lastName: 'Doe',
+            age: 30,
+            hobbies: ['music', 'movies', 'sports'],
+            address: {
+                stress: '50 main st.',
+                city: 'Boston',
+                state: 'MA'
+            }
+        }
+
+        // Jon Doe
+        console.log(person.firstName, person.lastName);
+
+        // movies
+        console.log(person.hobbies[1]);
+
+        // boston
+        console.log(person.address.city);
+
+        // destructuring (new to ES6)
+        let {firstName, lastName, address: {city}} = person;
+
+        // boston
+        console.log(city);
+
+        // adding property
+        person.email = 'jon@gmail.com';
+
+        // show everything + new email
+        console.log(person);
+
+    </script>
+</body>
+</html>
