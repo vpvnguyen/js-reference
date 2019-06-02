@@ -11,7 +11,7 @@
     <script type="text/javascript">
 
       // Fill in the question marks with what the output will be.
-      var animals = ["parrot", "cat", "dog", 'a'];
+      var animals = ["a", "s", "d", "a"];
 
       // // 3
       // console.log(animals.length);
@@ -42,23 +42,54 @@
 
       document.onkeyup = function(game) {
         var userInput = game.key;
+        console.log('######## userInput #########');
         console.log(`userInput: ${userInput}`);
-        console.log(`typeof userInput: ${typeof userInput}`);
+        console.log(`typeof userInput: ${userInput} = ${typeof userInput}`);
         var i = 0;
         var bool = true;
-        console.log(`variable i = ${i}`);
-        console.log(`typeof i = ${typeof i}`);
-        console.log(`var bool = ${bool}`);
-        console.log(`typeof bool = ${typeof bool}`);
-        console.log('#################');
+        console.log(`variable i: ${i}`);
+        console.log(`typeof i: ${i} = ${typeof i}`);
+        console.log(`var bool: ${bool}`);
+        console.log(`typeof bool: ${bool} = ${typeof bool}`);
+        console.log('######### animals.forEach(function(i, userInput, bool) { #########');
 
         animals.forEach(function(i, userInput, bool) { //when i put userinput in here, check animals array
           console.log(`This is userInput now: ${userInput}`);
-          console.log(`typeof userInput now = ${typeof userInput}`);
-          console.log(`This is var i now = ${i}`);
-          console.log(`typeof var i now = ${typeof i}`);
+          console.log(`typeof userInput: ${userInput} = ${typeof userInput}`);
+          console.log(`This is var i: ${i}`);
+          console.log(`typeof var i: ${i} = ${typeof i}`);
           console.log(`This is bool now: ${bool}`);
-          console.log(`typeof bool now = ${typeof bool}`);
+          console.log(`typeof bool: ${bool} = ${typeof bool}`);
+          i++;
+          bool.forEach(function(i) {
+            i = 0;
+            console.log('------ bool.forEach(function(i) { ----------');
+            console.log(`var i: ${i}`);
+
+            console.log(`typeof i: ${i} = ${typeof i}`);
+
+            console.log(`bool[1]: ${bool[1]}`);
+            console.log(`bool[userInput] ${bool[userInput]}`);
+            console.log(`type of bool[userInput]: ${bool[userInput]} = ${typeof bool[userInput]}`);
+
+            i++;
+
+            var iString = i.toString();
+
+            console.log(`.....DOES IT MATCH.....`)
+
+            if (iString == bool[userInput]) {
+              console.log(`${i} matches ${bool[userInput]}`);
+              console.log(`var i: ${i} is a typeof ${typeof i}`);
+              console.log(`bool[userInput]: ${bool[userInput]} is a type of ${typeof bool[userInput]}`);
+            } else {
+              console.log(`${i} != ${bool[userInput]}`);
+              console.log(`var i: ${i} is a typeof ${typeof i}`);
+              console.log(`bool[userInput]: ${bool[userInput]} is a type of ${typeof bool[userInput]}`);
+            }
+          });
+
+
           console.log('----------------');
       });
     };
