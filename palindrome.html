@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://stackoverflow.com/questions/14813369/palindrome-check-in-javascript">Source</a>
+    <script>
+
+        // stack overflow
+        // function palindrome (str) {
+        //     // split up the string into array: [n, o, o, n] *object when inside function
+        //     // reverse the order of the array [n, o, o, n]
+        //     // join the array back to string: noon
+        //     // return true or false if str (passed in) value is equal to what we created.
+        //     return str == str.split('').reverse().join('');
+        // };
+        var palindrome = function(string) {
+            var splitArr = string.split('');
+            var reverseArr = splitArr.reverse();
+            var joinArrStr = reverseArr.join('');
+            return string == joinArrStr;
+        };
+
+        // user input = noon
+        console.log(palindrome('noon'));
+        console.log('\n');
+        console.log(palindrome('blah'));
+    </script>
+</body>
+</html>
