@@ -12,6 +12,9 @@
 
       // Fill in the question marks with what the output will be.
       var animals = ["a", "s", "d", "a"];
+      var blankArr = [];
+      var wrongArr = [];
+      var trys = 12;
 
       // // 3
       // console.log(animals.length);
@@ -32,7 +35,7 @@
       // console.log(animals[animals.length - 1]);
 
       // // -1
-      // console.log(animals.indexOf("bear"));
+      // console.log(animals.indexOf("-1"));
 
       // // 0
       // console.log(animals.indexOf("parrot"));
@@ -46,50 +49,44 @@
         console.log(`userInput: ${userInput}`);
         console.log(`typeof userInput: ${userInput} = ${typeof userInput}`);
         var i = 0;
-        var bool = true;
         console.log(`variable i: ${i}`);
         console.log(`typeof i: ${i} = ${typeof i}`);
-        console.log(`var bool: ${bool}`);
-        console.log(`typeof bool: ${bool} = ${typeof bool}`);
+        // console.log(`var bool: ${bool}`);
+        // console.log(`typeof bool: ${bool} = ${typeof bool}`);
         console.log('######### animals.forEach(function(i, userInput, bool) { #########');
 
-        animals.forEach(function(i, userInput, bool) { //when i put userinput in here, check animals array
-          console.log(`This is userInput now: ${userInput}`);
-          console.log(`typeof userInput: ${userInput} = ${typeof userInput}`);
-          console.log(`This is var i: ${i}`);
+        animals.forEach(function(i, item, bool) { //when i put userinput in here, check animals array
+          var bool = false;
+          console.log(`var bool: ${bool}`);
+          console.log(`typeof: ${typeof bool}`);
+          console.log(`Function(item): ${item}`);
+          console.log(`typeof item: ${item} = ${typeof item}`);
+          console.log(`Function(i): ${i}`);
           console.log(`typeof var i: ${i} = ${typeof i}`);
-          console.log(`This is bool now: ${bool}`);
-          console.log(`typeof bool: ${bool} = ${typeof bool}`);
+          // console.log(`This is bool now: ${bool}`);
+          // console.log(`typeof bool: ${bool} = ${typeof bool}`);
           i++;
-          bool.forEach(function(i) {
+          console.log(`********** Checking If/else **********`);
+          if (userInput ===  animals[item]) {
+            console.log(`${userInput} = ${animals[item]} MATCH!`)
+            console.log(`typeof ${typeof userInput} = typeof ${typeof animals[item]}`);
+            blankArr.push(userInput);
+            console.log(`blankArr = ${blankArr}`);
+            var bool = true;
+            console.log('----------------');
+            console.log(`${bool}`);
+            console.log(`${typeof bool}`);
 
-            console.log('------ bool.forEach(function(i) { ----------');
-            console.log(`var i: ${i}`);
+          }
+          if (bool === false && animals.indexOf(userInput) === -1) {
+            console.log(`${userInput} != ${animals[item]}`);
+            trys--;
+            console.log(`Trys left: ${trys}`);
+            wrongArr.push(userInput);
+            console.log(`wrongArr = ${wrongArr}`);
+            console.log('----------------');
 
-            console.log(`typeof i: ${i} = ${typeof i}`);
-
-            console.log(`bool[1]: ${bool[1]}`);
-            console.log(`bool[userInput] ${bool[userInput]}`);
-            console.log(`type of bool[userInput]: ${bool[userInput]} = ${typeof bool[userInput]}`);
-
-
-            var iString = i.toString();
-
-            console.log(`.....DOES IT MATCH.....`)
-
-            if (iString == bool[userInput]) {
-              console.log(`${i} matches ${bool[userInput]}`);
-              console.log(`var i: ${i} is a typeof ${typeof i}`);
-              console.log(`bool[userInput]: ${bool[userInput]} is a type of ${typeof bool[userInput]}`);
-            } else {
-              console.log(`${i} != ${bool[userInput]}`);
-              console.log(`var i: ${i} is a typeof ${typeof i}`);
-              console.log(`bool[userInput]: ${bool[userInput]} is a type of ${typeof bool[userInput]}`);
-            }
-          });
-
-
-          console.log('----------------');
+          }
       });
     };
     
