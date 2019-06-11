@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Guess That Pokemon</title>
+    <link rel="stylesheet" href="./assets/css/reset.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-pokeball.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg tinted">
+    <div class="container py-5 text-center">
+        <div class="row">
+            <div class="col-xs-4 content mt-5">
+                <h1 id="noob-count">Guess That Pokemon!</h1>
+                <div id="game">Press any key to start guessing!</div>
+                <div class="col">
+                    <div id="answer"></div>
+                    <div id="wrong"></div>
+                    <div id="trys"></div>
+                    <div id="wins"></div>
+                    <div id="loses"></div>
+                    <button id="show-answer" onclick="showAnswer()">Show Answer</button>
+                    <div id="noob-count"></div>  
+                </div>
+            </div>
+        </div>
+    </div>
+<audio id="audio-win" src="./assets/audio/pokemon-level-up2.mp3" preload="auto"></audio>
+<a href="javascript:audioWin();"></a>
+<audio id="audio-lose" src="./assets/audio/pokemon-low-health.mp3" preload="auto"></audio>
+<a href="javascript:audioLose();"></a>
+<audio id="audio-answer" src="./assets/audio/pokemon-save-game.mp3" preload="auto"></audio>
+<a href="javascript:audioAnswer();"></a>
+    <script src="./assets/javascript/game.js"></script>
+</body>
+</html>
