@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Guess That Pokemon</title>
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-pokeball.ico" /> -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>Guess That Pokemon</h1>
+        <div id="start-game">Start Game</div>
+        <div class="row">
+            <div class="col-sm-8">
+                <div id="random"></div>
+                <div id="array"></div>
+                <div id="answer"></div>
+                <div id="wrong"></div>
+                <div id="trys"></div>
+                <div id="win"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Logic -->
+    <script type="text/javascript">
+
+        var mainArr = ['pikachu', 'charmander', 'bulbasaur', 'squirtle', 'mewtwo'];
+        var blankArr = [];
+        var wrongArr = [];
+        var correctArr = [];
+        var trys = 12;
+        var win = 0;
+        var bool = false;
+        var userInput = '';
+
+        var s1 = 'Hello';
+        console.log(typeof s1); // string
+
+        var s2 = new String('Hello');
+        console.log(typeof s2); //object
+
+        var randomArr = mainArr[Math.floor(Math.random() * mainArr.length)];
+        console.log(`Random Pick: ${randomArr}`);
+        document.getElementById('random').innerHTML = `Random Pick: ${randomArr}`;
+
+        // split the computer's choice into an array
+        var array = randomArr.split("");
+        console.log(`Array: ${array}`);
+        document.getElementById('array').innerHTML = `Array: ${array}`;
+
+        // Create blank spaces based on length of array
+        for (i = 0; i < array.length; i++) {
+            blankArr.push("_");
+            console.log(`Blanks: ${blankArr}`); // Testing via Console.Log
+        };
+
+        var saveUserInput = function() {
+            var userInput = event.key;
+            console.log('UserInput: ' + userInput);
+            bool = false;
+            console.log('saveUserInput bool: '+ bool);
+            array.forEach(function (item, index) {
+                if (userInput === item && index >= 0) {
+                    bool = true;
+                    console.log(`array.item: ${item} - MATCH!`);
+                } else if (wrongArr.indexOf(userInput) === -1 && trys > 0) {
+                    bool = false;
+                    console.log('else' + bool)
+                }
+                console.log('saveUserInput() =>')
+            }); // forEach()
+        }; // saveUserInput()
+
+        var checker = function() {
+            console.log('checker() bool: '+ bool);
+
+            if (bool === true) {
+                console.log('checker if bool === true: '+ bool);
+                blankArr[i] = userInput;
+                correctArr[i] = userInput; // so that blanks dont count towards win; wip
+                console.log(`correctArr = ${correctArr} | blankArr = ${blankArr}`);
+                document.getElementById("answer").innerHTML = blankArr.join(" ");
+                console.log(array.length + ' ' + correctArr.length)
+
+            } 
+            if (bool === false) {
+                console.log('checker else: ' + bool);
+
+                wrongArr.push(userInput); // put userinput into wrong guess array
+                document.getElementById('wrong').innerHTML = `wrongArr: ${wrongArr}`; // html wrong guesses array
+                document.getElementById('trys').innerHTML = `Trys Left: ${trys}`; // html trys left
+                trys--; // lose a try
+
+                console.log(`wrongArr = ${wrongArr}`);
+                console.log(`trys left = ${trys}`);
+
+            }
+
+        }; // checker()
+
+
+
+        document.onkeyup = function(event) {
+            console.log('onkeyup => saveUserInput');
+            saveUserInput();
+            console.log('saveUserInput() => checker()'); // log out all lines to userinput
+            checker(userInput);
+            console.log('checker() => end')
+
+        }; // key up
+
+
+</script>
+</body>
+</html>

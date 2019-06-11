@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.youtube.com/watch?v=hdI2bqOjy3c">JavaScript Crash Course For Beginners</a>
+    <p>JSON.stringify</p>
+    <p>for loop</p>
+    <p>while</p>
+    <p>for (let todo of todos)</p>
+<script>
+    const todos = [
+        {
+            id: 1,
+            text: 'take out trash',
+            isCompleted: true,
+        },
+        {
+            id: 2,
+            text: 'meeting with boss',
+            isCompleted: true,
+        },
+        {
+            id: 3,
+            text: 'dentist appt',
+            isCompleted: false,
+        }
+    ];
+
+    // 
+    const todoJSON = JSON.stringify(todos);
+    console.log('== todoJSON ==');
+    console.log(todoJSON); // JSON string, this is how you would send data to servers
+    console.log('\n');
+
+    // for loop
+    console.log('== for loop ==');
+    for (let i = 0; i < todos.length; i++) {
+        console.log(todos[i].text); // get iteration number
+    }
+    console.log('\n');
+
+    console.log('== while ==');
+    // while
+    let i = 0;
+    while (i < todos.length) {
+        console.log('while loop number: ' + i);
+        i++; // if you dont have this, it will keep looping
+    }
+    console.log('\n');
+
+    console.log('== for (let todo of todos) ==');
+    for (let todo of todos) { // todo = variable; todos = array
+        console.log('todo: ' + todo); // give us each one
+        console.log('todo.text: ' + todo.text);
+        console.log('todo.id: ' + todo.id);
+    }
+    console.log('\n');
+
+    // HIGH ORDER ARRAY METHODS
+    // forEach
+    console.log('== forEach ==');
+    todos.forEach(function (item, index, array) {
+        console.log(item);
+        console.log(index);
+    });
+    console.log('\n');
+
+    //map create new array from array, will return an array. Loop through, and return text value
+    console.log('== map ==')
+    todos.map(function(todo) {
+        return todo.text; // return new array of just text, not an obj
+    });
+
+    // filter create new array from condition, return isCompleted = true
+    console.log('== todos.filter ==')
+    const todoCompleted = todos.filter(function(todo) {
+        return todo.isCompleted === true;
+    }).map(function(todo) {
+        return todo.text;
+    });
+    console.log(todoCompleted);
+
+</script>
+</body>
+</html>
