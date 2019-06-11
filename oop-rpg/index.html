@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPG</title>
+</head>
+<body>
+    <script>
+        // constructor
+        var newHero = function(name, hp, atk) {
+            this.name = name;
+            this.hp = hp;
+            this.atk = atk;
+            this.getSummary = function() {
+                return `Hero: ${this.name} | HP: ${this.hp} | ATK: ${this.atk}`
+            }
+        };
+
+        // instatiate an object
+        const hero1 = new newHero('skywalker', 150, 10);
+        const hero2 = new newHero('vader', 200, 50);
+        const hero3 = new newHero('solo', 180, 5);
+
+        console.log(hero1); // newHero {name: 'skywalker', hp: 150, atk: 10}
+        console.log(hero1.getSummary()); // Hero: 'skywalker', HP: 150, ATK: 10
+        console.log(hero2.getSummary()); // Hero: 'vader', HP: 200, ATK: 10
+
+
+    </script>
+</body>
+</html>
