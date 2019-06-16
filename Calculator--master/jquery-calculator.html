@@ -32,7 +32,7 @@
           <h3 class="card-header">Calculator</h3>
 
           <div class="card-body">
-            <button id="button-1" class="btn btn-primary number" value="1"><span>1</span></button>
+            <button id="button-1" class="btn btn-primary number" value="1"><span></span></button>
             <button id="button-2" class="btn btn-primary number" value="2"><span>2</span></button>
             <button id="button-3" class="btn btn-primary number" value="3"><span>3</span></button>
             <button id="button-plus" class="btn btn-danger operator" value="+"><span>+</span></button>
@@ -89,6 +89,7 @@ $('.number').on('click', function(e) {
   if (stop === true){
  //gets value of id of html element 
   var num = $(this).val() 
+  console.log(num)
 //pushes the value into firstNum array 
 firstNum.push(num) 
 //change type to interger
