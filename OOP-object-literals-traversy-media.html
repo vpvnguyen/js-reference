@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OOP - Object Literals</title>
+</head>
+<body>
+    <script>
+        // difference between string and object
+        const s1 = 'hello';
+        console.log(`${s1} | ${typeof s1}`); // hello | string
+
+        const s2 = new String('hello');
+        console.log(`${s2} | ${typeof s2}`); // hello | object
+
+        // object literals
+        const book1 = {
+            title: 'game of thrones',
+            year: '2013',
+            author: {
+                firstName: 'jon',
+                lastName: 'doe',
+            },
+            getSummary: function() {
+                return `${this.title} was written by ${this.author.firstName} ${this.author.lastName} in ${this.year}`;
+            }
+        };
+        const book2 = {
+            title: 'winds of winter',
+            year: '2016',
+            author: {
+                firstName: 'mary',
+                lastName: 'jane',
+            },
+            getSummary: function() {
+                return `${this.title} was written by ${this.author.firstName} ${this.author.lastName} in ${this.year}`;
+            }
+        };
+        console.log(`Title of book1 is: ${book1.title}`); // game of thrones
+        console.log(book1.getSummary()); // invoke method, get return
+        console.log(`Title of book2 is: ${book2.title}`); // winds of winter
+        console.log(Object.values(book2)); // ['winds of winter', '2016, {firstName: 'mary', lastName: 'jane;}, f()]
+        console.log(Object.keys(book2)); // ['title', 'year', 'author', 'getSummary']
+
+    </script>
+</body>
+</html>

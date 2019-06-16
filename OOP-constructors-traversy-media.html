@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OOP - constructors</title>
+</head>
+<body>
+    <script>
+        // constructors
+        var bookNew = function(title, firstName, lastName, year) {
+            this.title = title;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.year = year;
+            this.getSummary = function() {
+                return `[${this.title}] was written by [${firstName} ${lastName}] in [${this.year}]`
+            }
+        };
+
+        // instatiate an object
+        const book1 = new bookNew('book1', 'jon', 'doe', '2013');
+        const book2 = new bookNew('book2', 'mary', 'jane', '2016');
+        console.log(`${book1} | ${book2}`); // [object Object] | [object Object]
+        console.log(book1); // bookNew {title: 'book1', firstName: 'jon', lastName: 'doe', year: '2013'}
+        console.log(book1.getSummary()); // [book1] was written by [jon doe] in [2013]
+        console.log(book2.getSummary()); // [book2] was written by [mary jane] in [2016]
+
+    </script>
+</body>
+</html>
